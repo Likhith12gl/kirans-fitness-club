@@ -1,0 +1,41 @@
+{
+  "name": "kirans-fitness-club",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "ts-node --project tsconfig.json scripts/seed-admin.ts",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dompurify": "^3.3.3",
+    "framer-motion": "^12.38.0",
+    "isomorphic-dompurify": "^3.8.0",
+    "lucide-react": "^1.7.0",
+    "mongoose": "^9.4.1",
+    "next": "14.2.35",
+    "next-auth": "^4.24.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-quill": "^2.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/dompurify": "^3.0.5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "dotenv": "^17.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "next-sitemap": "^4.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

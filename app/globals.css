@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply text-text-secondary hover:text-white transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-black font-semibold py-3 px-6 rounded-button hover:bg-accent-hover transition-all duration-200 inline-block text-center;
+  }
+
+  .btn-secondary {
+    @apply border border-accent text-accent font-semibold py-3 px-6 rounded-button hover:bg-accent/10 transition-all duration-200 inline-block text-center;
+  }
+
+  .btn-ghost {
+    @apply text-text-secondary font-medium hover:text-white transition-colors duration-200;
+  }
+
+  .btn-destructive {
+    @apply border border-destructive text-destructive font-semibold py-3 px-6 rounded-button hover:bg-destructive/10 transition-all duration-200 inline-block text-center;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-card p-4 hover:border-border-hover hover:scale-[1.02] transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+}

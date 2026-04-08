@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api
+
+# Host
+Host: https://kiransfitness.com
+
+# Sitemaps
+Sitemap: https://kiransfitness.com/sitemap.xml
