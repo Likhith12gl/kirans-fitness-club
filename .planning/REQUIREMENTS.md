@@ -132,12 +132,73 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (To be filled by roadmap) | | |
+| FOUN-01 | Phase 1 | Pending |
+| FOUN-02 | Phase 1 | Pending |
+| FOUN-03 | Phase 1 | Pending |
+| FOUN-04 | Phase 1 | Pending |
+| FOUN-05 | Phase 1 | Pending |
+| FOUN-06 | Phase 1 | Pending |
+| AUTH-01 | Phase 2 | Pending |
+| AUTH-02 | Phase 2 | Pending |
+| AUTH-03 | Phase 2 | Pending |
+| AUTH-04 | Phase 2 | Pending |
+| AUTH-05 | Phase 2 | Pending |
+| AUTH-06 | Phase 2 | Pending |
+| AUTH-07 | Phase 2 | Pending |
+| PUB-01 | Phase 3 | Pending |
+| PUB-02 | Phase 3 | Pending |
+| PUB-03 | Phase 3 | Pending |
+| PUB-04 | Phase 3 | Pending |
+| PUB-05 | Phase 3 | Pending |
+| PUB-06 | Phase 3 | Pending |
+| PUB-07 | Phase 3 | Pending |
+| PUB-08 | Phase 3 | Pending |
+| PUB-09 | Phase 3 | Pending |
+| SEO-01 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| SEO-04 | Phase 4 | Pending |
+| SEO-05 | Phase 4 | Pending |
+| SEO-06 | Phase 4 | Pending |
+| SEO-07 | Phase 4 | Pending |
+| CMS-01 | Phase 5 | Pending |
+| CMS-02 | Phase 5 | Pending |
+| CMS-03 | Phase 5 | Pending |
+| CMS-04 | Phase 5 | Pending |
+| CMS-05 | Phase 5 | Pending |
+| CMS-06 | Phase 5 | Pending |
+| CMS-07 | Phase 5 | Pending |
+| CMS-08 | Phase 5 | Pending |
+| CMS-09 | Phase 5 | Pending |
+| ADM-01 | Phase 6 | Pending |
+| ADM-02 | Phase 6 | Pending |
+| ADM-03 | Phase 6 | Pending |
+| ADM-04 | Phase 6 | Pending |
+| ADM-05 | Phase 6 | Pending |
+| ADM-06 | Phase 6 | Pending |
+| ADM-07 | Phase 6 | Pending |
+| DASH-01 | Phase 6 | Pending |
+| DASH-02 | Phase 6 | Pending |
+| DASH-03 | Phase 6 | Pending |
+| DASH-04 | Phase 6 | Pending |
+| DASH-05 | Phase 6 | Pending |
+| DASH-06 | Phase 6 | Pending |
+| API-01 | Phase 7 | Pending |
+| API-02 | Phase 7 | Pending |
+| API-03 | Phase 7 | Pending |
+| API-04 | Phase 7 | Pending |
+| API-05 | Phase 7 | Pending |
+| API-06 | Phase 7 | Pending |
+| PERF-01 | Phase 7 | Pending |
+| PERF-02 | Phase 7 | Pending |
+| PERF-03 | Phase 7 | Pending |
+| PERF-04 | Phase 7 | Pending |
+| PERF-05 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 48 total
-- Mapped to phases: 0
-- Unmapped: 48 ⚠️
+- Mapped to phases: 48
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-09*
