@@ -8,7 +8,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const trainers = [
-    { name: "Kiran Kumar", role: "Head Coach & Founder", exp: "15+ Years", img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop" },
+    { 
+      name: "Mr. Bangalore Kiran Kumar", 
+      role: "Head Coach & Founder", 
+      exp: "20 Years", 
+      img: "/kiran-trainer.jpg",
+      bio: "Mr. Bangalore Kiran has been in this fitness industry for the past 20 years, has trained 4000+ members, and has maintained his impressive physique continuously till now."
+    },
     { name: "Anita S.", role: "CrossFit Specialist", exp: "8 Years", img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2000&auto=format&fit=crop" },
     { name: "Vikram M.", role: "Strength & Conditioning", exp: "6 Years", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
   ];
@@ -53,10 +59,13 @@ export default function AboutPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-full border-t border-border/50">
                 <h3 className="text-2xl text-white font-bold mb-1">{trainer.name}</h3>
                 <p className="text-accent font-medium mb-3">{trainer.role}</p>
-                <p className="text-text-secondary text-sm">Experience: {trainer.exp}</p>
+                <p className="text-text-secondary text-sm font-bold mb-3">Experience: {trainer.exp}</p>
+                {trainer.bio && (
+                  <p className="text-text-secondary text-sm mt-auto">{trainer.bio}</p>
+                )}
               </div>
             </div>
           ))}

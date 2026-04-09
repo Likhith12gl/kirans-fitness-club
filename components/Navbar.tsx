@@ -39,9 +39,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-heading font-semibold text-xl text-white hover:text-white"
+          className="font-heading font-semibold text-xl text-white hover:text-white flex items-center gap-3"
         >
-          Kiran&apos;s Fitness Club
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Kiran's Fitness Club Logo" className="w-12 h-12 object-contain" />
+          <span className="hidden sm:inline">Kiran&apos;s Fitness Club</span>
         </Link>
 
         {/* Desktop Links */}
