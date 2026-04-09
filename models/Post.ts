@@ -17,7 +17,7 @@ const PostSchema: Schema = new Schema(
   {
     title: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
-    content: { type: String, required: true },
+    content: { type: String, default: "" },
     type: { type: String, enum: ["blog", "event"], default: "blog" },
     status: { type: String, enum: ["draft", "published"], default: "draft" },
     excerpt: { type: String },

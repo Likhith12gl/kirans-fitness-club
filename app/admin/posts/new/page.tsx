@@ -70,7 +70,7 @@ export default function NewPostPage() {
       });
       
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error);
+      if (!res.ok) throw new Error(data.message || data.error || "Unknown error");
       
       router.push("/admin/posts");
       router.refresh(); // Refresh the list
