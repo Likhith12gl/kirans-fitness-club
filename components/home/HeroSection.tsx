@@ -7,16 +7,32 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
-          alt="Kiran's Fitness Club interior"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-background/80 bg-gradient-to-t from-background via-background/60 to-transparent z-10" />
-      </div>
+      <motion.div 
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 z-0 overflow-hidden bg-black"
+      >
+        <motion.div 
+          animate={{ scale: 1.05 }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          className="w-full h-full relative"
+        >
+          <Image
+            src="/gym-bg.png"
+            alt="Kiran's Fitness Club interior"
+            fill
+            priority
+            quality={100}
+            className="object-cover"
+          />
+        </motion.div>
+        
+        {/* Advanced Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0A0A0A_100%)] opacity-80 pointer-events-none" />
+        <div className="absolute inset-0 bg-accent/5 mix-blend-overlay pointer-events-none" />
+      </motion.div>
 
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
