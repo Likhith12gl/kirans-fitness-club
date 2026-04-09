@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import dynamic from "next/dynamic";
-import "react-quill/dist/quill.snow.css";
-
-// Avoid Next.js SSR hydration breaking the Quill widget natively
-const ReactQuill: any = dynamic(() => import("react-quill"), { ssr: false });
+import { useState, useEffect } from "react";
 
 interface QuillEditorProps {
   value: string;
@@ -12,11 +8,35 @@ interface QuillEditorProps {
 }
 
 export default function QuillEditor({ value, onChange }: QuillEditorProps) {
+  const [QuillComponent, setQuillComponent] = useState<any>(null);
+
+  useEffect(() => {
+    // Only import Quill on the client side, after hydration is complete
+    import("react-quill")
+      .then((mod) => {
+        setQuillComponent(() => mod.default || mod);
+      })
+      .catch((err) => {
+        console.error("Failed to load Quill editor:", err);
+      });
+
+    // Import styles
+    import("react-quill/dist/quill.snow.css");
+  }, []);
+
+  if (!QuillComponent) {
+    return (
+      <div className="bg-white text-black p-2 rounded-md overflow-hidden border border-border min-h-[300px] flex items-center justify-center">
+        <span className="text-gray-400">Loading editor...</span>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white text-black p-2 rounded-md overflow-hidden border border-border">
-      <ReactQuill 
-        theme="snow" 
-        value={value} 
+      <QuillComponent
+        theme="snow"
+        value={value}
         onChange={onChange}
         className="min-h-[300px]"
       />

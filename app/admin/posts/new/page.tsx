@@ -65,15 +65,23 @@ export default function NewPostPage() {
       const res = await fetch("/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Native large payload push - normally Base64 would hit NextJS limits but for small gyms it's optimal
         body: JSON.stringify(formData),
       });
       
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || data.error || "Unknown error");
-      
+      if (!res.ok) {
+        let errorMsg = `Server error (${res.status})`;
+        try {
+          const data = await res.json();
+          errorMsg = data.message || data.error || errorMsg;
+        } catch {
+          // Response was not JSON (e.g. Vercel HTML 413 page)
+          errorMsg = `Server error ${res.status}: ${res.statusText || "Request may be too large"}`;
+        }
+        throw new Error(errorMsg);
+      }
+
       router.push("/admin/posts");
-      router.refresh(); // Refresh the list
+      router.refresh();
     } catch (err: any) {
       setError(err.message);
       setLoading(false);
