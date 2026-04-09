@@ -28,14 +28,15 @@ export default async function EventPostPage({ params }: { params: { slug: string
 
   if (!post) notFound();
 
-  const cleanHtml = DOMPurify.sanitize(post.content);
+  const cleanHtml = DOMPurify.sanitize(post.content || "");
+  const postDate = post.createdAt instanceof Date ? post.createdAt : new Date(post.createdAt || Date.now());
 
   // Generate distinct Event JSON-LD schema dynamically
   const eventSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": post.title,
-    "startDate": post.createdAt.toISOString(),
+    "startDate": postDate.toISOString(),
     "description": post.excerpt || "A special fitness event at Kiran's Fitness Club.",
     "location": {
       "@type": "Place",
@@ -66,8 +67,8 @@ export default async function EventPostPage({ params }: { params: { slug: string
         <header className="mb-12 border-b border-border/50 pb-8 mt-6">
           <div className="flex items-center gap-2 text-accent font-bold mb-4">
             <Calendar className="w-5 h-5" />
-            <time dateTime={post.createdAt.toISOString()}>
-              {post.createdAt.toLocaleDateString('en-US', {
+            <time dateTime={postDate.toISOString()}>
+              {postDate.toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'

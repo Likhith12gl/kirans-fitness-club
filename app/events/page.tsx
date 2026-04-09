@@ -27,6 +27,7 @@ export default async function EventsPage() {
       slug: p.slug,
       excerpt: p.excerpt,
       createdAt: p.createdAt.toISOString(),
+      images: p.images || [],
     }));
   } catch {
     console.warn("Database unavailable during static generation, defaulting to empty events list");

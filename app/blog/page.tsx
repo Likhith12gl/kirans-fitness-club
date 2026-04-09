@@ -27,6 +27,7 @@ export default async function BlogPage() {
       slug: p.slug,
       excerpt: p.excerpt,
       createdAt: p.createdAt.toISOString(),
+      images: p.images || [],
     }));
   } catch {
     console.warn("Database unavailable during static generation, defaulting to empty blog list");
