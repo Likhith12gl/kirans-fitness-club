@@ -3,10 +3,10 @@ import dbConnect from "@/lib/db";
 import Post from "@/models/Post";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import DOMPurify from "isomorphic-dompurify";
+// import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
-import ImageCarousel from "@/components/cms/ImageCarousel";
+// import ImageCarousel from "@/components/cms/ImageCarousel";
 
 export const revalidate = 60;
 
