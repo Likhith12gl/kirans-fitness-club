@@ -8,6 +8,7 @@ export interface IPost extends Document {
   type: "blog" | "event";
   status: "draft" | "published";
   excerpt?: string;
+  images: string[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -20,6 +21,7 @@ const PostSchema: Schema = new Schema(
     type: { type: String, enum: ["blog", "event"], default: "blog" },
     status: { type: String, enum: ["draft", "published"], default: "draft" },
     excerpt: { type: String },
+    images: { type: [String], default: [] },
   },
   { timestamps: true }
 );

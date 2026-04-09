@@ -23,13 +23,28 @@ export default function NewPostPage() {
     const files = e.target.files;
     if (!files) return;
 
-    const newImages = [...formData.images];
-    
     Array.from(files).forEach((file) => {
       const reader = new FileReader();
       reader.onloadend = () => {
-        newImages.push(reader.result as string);
-        setFormData({ ...formData, images: newImages });
+        const img = document.createElement("img");
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let { width, height } = img;
+          const MAX = 800;
+          if (width > height && width > MAX) {
+            height *= MAX / width; width = MAX;
+          } else if (height > MAX) {
+            width *= MAX / height; height = MAX;
+          }
+          canvas.width = width; canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            const compressed = canvas.toDataURL("image/jpeg", 0.7);
+            setFormData(prev => ({ ...prev, images: [...prev.images, compressed] }));
+          }
+        };
+        img.src = reader.result as string;
       };
       reader.readAsDataURL(file);
     });
