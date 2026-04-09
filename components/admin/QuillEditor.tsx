@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
-// @ts-ignore - CSS module import
+// @ts-expect-error - CSS module import has no type declarations
 import "react-quill/dist/quill.snow.css";
 
 interface QuillEditorProps {
