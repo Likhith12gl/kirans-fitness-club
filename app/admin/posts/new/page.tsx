@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ImagePlus, X } from "lucide-react";
 import QuillEditor from "@/components/admin/QuillEditor";
 
 export default function NewPostPage() {
@@ -14,9 +14,32 @@ export default function NewPostPage() {
     type: "blog",
     status: "draft",
     content: "",
+    images: [] as string[],
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files) return;
+
+    const newImages = [...formData.images];
+    
+    Array.from(files).forEach((file) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        newImages.push(reader.result as string);
+        setFormData({ ...formData, images: newImages });
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const removeImage = (index: number) => {
+    const newImages = [...formData.images];
+    newImages.splice(index, 1);
+    setFormData({ ...formData, images: newImages });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +50,7 @@ export default function NewPostPage() {
       const res = await fetch("/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        // Native large payload push - normally Base64 would hit NextJS limits but for small gyms it's optimal
         body: JSON.stringify(formData),
       });
       
@@ -55,7 +79,7 @@ export default function NewPostPage() {
         
         <div className="card p-6 border border-border space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-2">
               <label className="text-text-secondary text-sm font-bold">Title</label>
               <input 
                 type="text" 
@@ -66,6 +90,18 @@ export default function NewPostPage() {
               />
             </div>
             
+            <div className="space-y-2 md:col-span-2">
+              <label className="text-text-secondary text-sm font-bold">Short Description (Excerpt)</label>
+              <input 
+                type="text" 
+                maxLength={160}
+                placeholder="A brief summary measuring exactly what the article captures (Optional)"
+                className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
+                value={formData.excerpt}
+                onChange={e => setFormData({...formData, excerpt: e.target.value})}
+              />
+            </div>
+
             <div className="space-y-2">
               <label className="text-text-secondary text-sm font-bold">Type</label>
               <select 
@@ -89,20 +125,35 @@ export default function NewPostPage() {
                 <option value="published">Published</option>
               </select>
             </div>
-            
-            <div className="space-y-2">
-              <label className="text-text-secondary text-sm font-bold">Excerpt (Optional)</label>
-              <input 
-                type="text" 
-                className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
-                value={formData.excerpt}
-                onChange={e => setFormData({...formData, excerpt: e.target.value})}
-              />
-            </div>
           </div>
           
-          <div className="space-y-2">
-            <label className="text-text-secondary text-sm font-bold">Content</label>
+          <div className="space-y-4 pt-4 border-t border-border/50">
+            <label className="text-text-secondary text-sm font-bold">Photo Gallery (Base64 Carousels)</label>
+            <div className="flex items-center gap-4">
+              <label className="cursor-pointer btn-secondary flex items-center gap-2">
+                <ImagePlus className="w-5 h-5"/> Add Photos
+                <input type="file" multiple accept="image/*" className="hidden" onChange={handleImageUpload} />
+              </label>
+              <span className="text-sm text-text-muted">Select multiple images to create a slidable carousel automatically.</span>
+            </div>
+            
+            {formData.images.length > 0 && (
+              <div className="flex gap-4 overflow-x-auto py-2">
+                {formData.images.map((src, idx) => (
+                  <div key={idx} className="relative shrink-0 rounded-md overflow-hidden border border-border w-32 h-32">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt="Upload preview" className="object-cover w-full h-full" />
+                    <button type="button" onClick={() => removeImage(idx)} className="absolute top-1 right-1 bg-black/70 p-1 rounded-full text-white hover:text-red-500 hover:bg-black transition">
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          
+          <div className="space-y-2 pt-4 border-t border-border/50">
+            <label className="text-text-secondary text-sm font-bold">Detailed Content</label>
             <QuillEditor 
               value={formData.content} 
               onChange={(val) => setFormData({...formData, content: val})} 
