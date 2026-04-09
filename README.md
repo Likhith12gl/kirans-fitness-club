@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kiran's Fitness Club - Gym Management Platform
 
-## Getting Started
+A production-ready, full-stack gym management platform designed to serve as the operational hub and public presence for Kiran's Fitness Club in Bangalore. Featuring a completely custom Content Management System, real-time membership dashboards, and SEO-optimized programmatic location routing.
 
-First, run the development server:
+## 🚀 Live Features
+- **Public Marketing Site:** Optimized homepage featuring Framer Motion hero animations and responsive utility-first layout constraints.
+- **Member Dashboard:** Read-only portal dynamically computing exact remaining subscription days and warning users to renew natively via integrated WhatsApp URIs.
+- **Custom React-Quill CMS:** Administrator backend mapping raw JSON outputs explicitly for Blog and Event articles utilizing `isomorphic-dompurify`.
+- **Admin Control Panel:** Secured interface for managing registered gym members with mathematically precise chronological start/end date updates bypassing raw manual datetime inputs.
+- **SEO Ready:** Native JSON-LD structured mappings alongside absolute meta generators caching pages across Incremental Static Regeneration (ISR) configurations.
 
+## 🛠️ Technology Stack
+- **Framework:** Next.js 14 App Router
+- **Database:** MongoDB Atlas (Mongoose ODM)
+- **Authentication:** NextAuth (Credentials Provider & JWT)
+- **Styling:** Tailwind CSS + custom local variables
+- **Content:** React-Quill (with dynamic SSR suppression)
+
+---
+
+## 💻 Running Locally from Scratch
+
+Follow these steps exactly to run the robust development server natively on your machine:
+
+### 1. Requirements
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/en/) (v18 or higher)
+- [Git](https://git-scm.com/)
+- A free [MongoDB Atlas](https://cloud.mongodb.com/) cluster
+
+### 2. Clone repository & Install
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Likhith12gl/kirans-fitness-club.git
+cd kirans-fitness-club
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Setup Environment Variables
+Create a file named `.env.local` inside the root folder, and paste the following parameters:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+# Change this URI to match your specific MongoDB Atlas connection string!
+# Note: If your local network drops the connection, use the native legacy MongoDB connection strings bypassing DNS SRV records.
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.yourcluster.mongodb.net/fitness?retryWrites=true&w=majority
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# NextAuth Configuration
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=generate_any_secure_32_character_string_here_as_your_jwt_lock
+```
 
-## Learn More
+### 4. Create the Admin Account (Seeding)
+The platform is locked down aggressively behind Role-Based guards. To access `/admin`, you need the first administrator account! Run the seeding script once:
+```bash
+npx -y tsx scripts/seed-admin.ts
+```
 
-To learn more about Next.js, take a look at the following resources:
+> **IMPORTANT:** If you encounter a `querySrv ECONNREFUSED` error during seeding, your local ISP/Network is blocking MongoDB's ports. Simply connect to a Mobile Hotspot temporarily, or manually insert the Admin JSON payload straight into your Atlas browser interface.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. Launch the Server!
+Run the development environment:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open your browser to [http://localhost:3000](http://localhost:3000). To test the backend, navigate to `/login` and sign in utilizing:
+- **Email:** `admin@kiransfitness.com`
+- **Password:** `Admin@123`
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Developed meticulously for production environments.*
