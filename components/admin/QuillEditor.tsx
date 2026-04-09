@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
+// @ts-ignore - CSS module import
+import "react-quill/dist/quill.snow.css";
 
 interface QuillEditorProps {
   value: string;
@@ -19,9 +21,6 @@ export default function QuillEditor({ value, onChange }: QuillEditorProps) {
       .catch((err) => {
         console.error("Failed to load Quill editor:", err);
       });
-
-    // Import styles
-    import("react-quill/dist/quill.snow.css");
   }, []);
 
   if (!QuillComponent) {
