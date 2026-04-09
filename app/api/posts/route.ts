@@ -42,15 +42,25 @@ export async function POST(request: Request) {
         body.slug = body.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
     }
 
-    const post = await Post.create(body);
+    const post = await Post.create({
+      title: body.title,
+      slug: body.slug,
+      content: body.content || "",
+      excerpt: body.excerpt,
+      type: body.type || "blog",
+      status: body.status || "draft",
+      images: body.images || [],
+    });
+
     return NextResponse.json(post, { status: 201 });
   } catch (error: any) {
     console.error("POST /api/posts error:", error);
+    const errorMsg = error instanceof Error ? error.message : String(error);
     
     if (error.code === 11000) {
       return NextResponse.json({ error: "A post with this title or slug already exists" }, { status: 400 });
     }
     
-    return NextResponse.json({ error: "Failed to create post", message: error.message }, { status: 500 });
+    return NextResponse.json({ error: "Failed to create post", message: errorMsg }, { status: 500 });
   }
 }

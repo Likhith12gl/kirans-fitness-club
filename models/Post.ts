@@ -26,15 +26,4 @@ const PostSchema: Schema = new Schema(
   { timestamps: true }
 );
 
-// Auto-generate slug if not provided or regenerating from title
-PostSchema.pre("validate", function (this: any, next: any) {
-  if (this.title && !this.slug) {
-    this.slug = this.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)+/g, "");
-  }
-  next();
-});
-
 export default mongoose.models.Post || mongoose.model<IPost>("Post", PostSchema);
