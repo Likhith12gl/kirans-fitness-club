@@ -3,72 +3,36 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | Kiran's Fitness Club",
-  description: "Learn about our mission, our story, and meet the expert trainers at Kiran's Fitness Club.",
+  description: "Learn about our mission, our story, and the man completely dedicated to your physical success.",
 };
 
 export default function AboutPage() {
-  const trainers = [
-    { 
-      name: "Mr. Bangalore Kiran Kumar", 
-      role: "Head Coach & Founder", 
-      exp: "20 Years", 
-      img: "/kiran-trainer.jpg",
-      bio: "Mr. Bangalore Kiran has been in this fitness industry for the past 20 years, has trained 4000+ members, and has maintained his impressive physique continuously till now."
-    },
-    { name: "Anita S.", role: "CrossFit Specialist", exp: "8 Years", img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2000&auto=format&fit=crop" },
-    { name: "Vikram M.", role: "Strength & Conditioning", exp: "6 Years", img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
-  ];
-
   return (
     <main className="pt-24 pb-20 bg-background min-h-screen">
       <div className="container-custom">
         {/* Story Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
-          <div className="relative h-[500px] rounded-button overflow-hidden border border-border">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[600px] md:h-[700px] rounded-button overflow-hidden border border-border">
             <Image 
-              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" 
-              alt="Gym floor" 
+              src="/kiran-trainer.png" 
+              alt="Mr. Bangalore Kiran Kumar" 
               fill 
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
           <div>
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 uppercase">Our <span className="text-accent">Story</span></h1>
-            <div className="space-y-4 text-text-secondary text-lg">
-              <p>Founded in 2014, Kiran&apos;s Fitness Club started with a simple mission: to bring professional, elite-level fitness infrastructure to Anjananagar.</p>
-              <p>We realized that local residents were traveling miles just to access quality equipment and knowledgeable trainers. We changed that by building a 4000+ sqft sanctuary for fitness enthusiasts right here in the neighborhood.</p>
-              <p>Today, with over 500 active members, we&apos;re more than just a gym. We&apos;re a community of individuals dedicated to pushing their limits and transforming their lives.</p>
+            <div className="space-y-6 text-text-secondary text-lg">
+              <p>Founded with a simple mission: to bring professional, elite-level fitness infrastructure to Anjananagar.</p>
+              <p>We realized that local residents were traveling miles just to access quality equipment and knowledgeable trainers. We changed that by building a sanctuary for fitness enthusiasts right here in the neighborhood.</p>
+              
+              <div className="pt-6 mt-6 border-t border-border/50">
+                <h3 className="text-2xl font-bold text-white mb-2">Meet The Founder</h3>
+                <p className="text-accent font-bold mb-4">Mr. Bangalore Kiran Kumar</p>
+                <p>Kiran has been entirely dedicated to this fitness industry for the past 20 years. He has personally trained 4000+ members, meticulously guiding them through transformations, whilst impressively maintaining his own flawless physique continuously till now.</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Team Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4 uppercase">Meet The <span className="text-accent">Experts</span></h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">Certified professionals dedicated to your success.</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {trainers.map((trainer, i) => (
-            <div key={i} className="card overflow-hidden group">
-              <div className="relative h-80 w-full overflow-hidden">
-                <Image 
-                  src={trainer.img} 
-                  alt={trainer.name} 
-                  fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 flex flex-col h-full border-t border-border/50">
-                <h3 className="text-2xl text-white font-bold mb-1">{trainer.name}</h3>
-                <p className="text-accent font-medium mb-3">{trainer.role}</p>
-                <p className="text-text-secondary text-sm font-bold mb-3">Experience: {trainer.exp}</p>
-                {trainer.bio && (
-                  <p className="text-text-secondary text-sm mt-auto">{trainer.bio}</p>
-                )}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </main>
