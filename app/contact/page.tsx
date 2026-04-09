@@ -111,7 +111,7 @@ export default function ContactPage() {
         {/* Map */}
         <div className="h-[400px] w-full rounded-button overflow-hidden border border-border">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3bae3db65e2333b1%3A0xe54e60156d95394!2sAnjana%20Nagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            src="https://maps.google.com/maps?q=Kiran's+Fitness+Club+Anjananagar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
