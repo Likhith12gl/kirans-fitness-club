@@ -109,9 +109,9 @@ export default function ContactPage() {
         </div>
 
         {/* Map */}
-        <div className="h-[400px] w-full rounded-button overflow-hidden border border-border">
+        <div className="relative z-0 h-[400px] w-full rounded-button overflow-hidden border border-border">
           <iframe 
-            src="https://maps.google.com/maps?q=Kiran's+Fitness+Club+Anjananagar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            src="https://maps.google.com/maps?q=Kiran%27s+Fitness+Club+Anjananagar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
