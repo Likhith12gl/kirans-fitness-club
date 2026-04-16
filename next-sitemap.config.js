@@ -26,7 +26,7 @@ module.exports = {
   },
   transform: async (config, path) => {
     // Higher priority for key pages
-    const priorityMap: Record<string, number> = {
+    const priorityMap = {
       '/': 1.0,
       '/services': 0.9,
       '/about': 0.8,
