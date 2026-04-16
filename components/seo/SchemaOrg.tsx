@@ -1,5 +1,5 @@
 export default function SchemaOrg() {
-  const SITE_URL = "https://kirans-fitness-club.vercel.app";
+  const SITE_URL = "https://kiransfitnessclub.com";
 
   const localBusinessData = {
     "@context": "https://schema.org",
@@ -9,13 +9,13 @@ export default function SchemaOrg() {
     "image": `${SITE_URL}/icon.png`,
     "@id": `${SITE_URL}/#localbusiness`,
     "url": SITE_URL,
-    "telephone": "+919019688582",
-    "email": "contact@kiransfitness.com",
-    "description": "Kiran's Fitness Club is Anjananagar's premier gym, offering world-class equipment, certified personal trainers, group fitness classes, and affordable membership plans near Magadi Main Road and Bath Road, Bangalore.",
+    "telephone": "+918179376067",
+    "email": "29nkiran@gmail.com",
+    "description": "Kiran's Fitness Club is Anjananagar's premier gym, offering world-class equipment, certified personal trainers, group fitness classes, and affordable membership plans.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "#123, Magadi Main Road, Anjananagar",
-      "addressLocality": "Bangalore",
+      "streetAddress": "9, 10, Shivakrupa Complex, E W College Main Rd, Bharath Nagar, 1st Stage, Bedarahalli",
+      "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
       "postalCode": "560091",
       "addressCountry": "IN"
@@ -36,7 +36,7 @@ export default function SchemaOrg() {
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "Sunday",
-        "opens": "06:00",
+        "opens": "07:00",
         "closes": "12:00"
       }
     ],
@@ -44,11 +44,12 @@ export default function SchemaOrg() {
     "currenciesAccepted": "INR",
     "paymentAccepted": "Cash, UPI, Bank Transfer",
     "areaServed": [
-      "Anjananagar", "Magadi Road", "Bath Road", "Rajajinagar",
+      "Anjananagar", "Magadi Road", "Rajajinagar",
       "Vijayanagar", "Chord Road", "Nagarbhavi", "Bangalore"
     ],
     "sameAs": [
-      SITE_URL
+      SITE_URL,
+      "https://www.instagram.com/kiransfitnessclub"
     ],
     "founder": {
       "@type": "Person",

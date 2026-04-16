@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         description: post.excerpt || "Read the latest fitness insights from Kiran's Fitness Club.",
         type: "article",
         publishedTime: postDate.toISOString(),
-        url: `https://kirans-fitness-club.vercel.app/blog/${params.slug}`,
+        url: `https://kiransfitnessclub.com/blog/${params.slug}`,
         siteName: "Kiran's Fitness Club",
         ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }] }),
       },
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         ...(ogImage && { images: [ogImage] }),
       },
       alternates: {
-        canonical: `https://kirans-fitness-club.vercel.app/blog/${params.slug}`,
+        canonical: `https://kiransfitnessclub.com/blog/${params.slug}`,
       },
     };
   } catch {
@@ -84,19 +84,19 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       "author": {
         "@type": "Organization",
         "name": "Kiran's Fitness Club",
-        "url": "https://kirans-fitness-club.vercel.app"
+        "url": "https://kiransfitnessclub.com"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Kiran's Fitness Club",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kirans-fitness-club.vercel.app/icon.png"
+          "url": "https://kiransfitnessclub.com/icon.png"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": `https://kirans-fitness-club.vercel.app/blog/${params.slug}`
+        "@id": `https://kiransfitnessclub.com/blog/${params.slug}`
       }
     };
 

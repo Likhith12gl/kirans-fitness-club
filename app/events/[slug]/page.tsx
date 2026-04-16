@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         description: post.excerpt || "A special fitness event at Kiran's Fitness Club.",
         type: "article",
         publishedTime: postDate.toISOString(),
-        url: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
+        url: `https://kiransfitnessclub.com/events/${params.slug}`,
         siteName: "Kiran's Fitness Club",
         ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }] }),
       },
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         ...(ogImage && { images: [ogImage] }),
       },
       alternates: {
-        canonical: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
+        canonical: `https://kiransfitnessclub.com/events/${params.slug}`,
       },
     };
   } catch {
@@ -74,7 +74,7 @@ export default async function EventPostPage({ params }: { params: { slug: string
       "startDate": postDate.toISOString(),
       "endDate": postDate.toISOString(),
       "description": post.excerpt || "A special fitness event at Kiran's Fitness Club.",
-      "url": `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
+      "url": `https://kiransfitnessclub.com/events/${params.slug}`,
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
@@ -91,7 +91,7 @@ export default async function EventPostPage({ params }: { params: { slug: string
       "organizer": {
         "@type": "Organization",
         "name": "Kiran's Fitness Club",
-        "url": "https://kirans-fitness-club.vercel.app"
+        "url": "https://kiransfitnessclub.com"
       }
     };
 

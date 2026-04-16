@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Gym Membership Plans & Pricing — Monthly, Quarterly, Annual",
   description:
     "Affordable gym membership plans at Kiran's Fitness Club, Anjananagar. Monthly (₹1,500), Quarterly (₹4,000), and Annual (₹12,000) plans with personal training and group classes in Bangalore.",
-  alternates: { canonical: "https://kirans-fitness-club.vercel.app/services" },
+  alternates: { canonical: "https://kiransfitnessclub.com/services" },
   openGraph: {
     title: "Gym Membership Plans & Pricing | Kiran's Fitness Club",
     description: "Affordable gym plans in Anjananagar, Bangalore — Monthly ₹1,500, Quarterly ₹4,000, Annual ₹12,000. Personal training and group classes included.",
-    url: "https://kirans-fitness-club.vercel.app/services",
+    url: "https://kiransfitnessclub.com/services",
     type: "website",
   },
   twitter: {
@@ -23,25 +23,39 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const plans = [
     {
-      name: "Monthly",
+      name: "1 Day Pass",
+      price: "₹200",
+      period: "/ day",
+      popular: false,
+      features: ["Full gym access", "One-time entry", "Locker facility"],
+    },
+    {
+      name: "1 Month",
       price: "₹1,500",
       period: "/ month",
       popular: false,
-      features: ["Full gym access", "Locker facility", "1 Group class/week", "General diet plan"],
+      features: ["Full gym access", "Locker facility", "General diet plan"],
     },
     {
-      name: "Quarterly",
-      price: "₹4,000",
+      name: "3 Months",
+      price: "₹3,000",
       period: "/ 3 months",
       popular: true,
-      features: ["Full gym access", "Locker facility", "Unlimited group classes", "Custom diet plan", "1 PT session/month"],
+      features: ["Full gym access", "Locker facility", "Custom diet plan"],
     },
     {
-      name: "Annual",
-      price: "₹12,000",
-      period: "/ year",
+      name: "6 Months",
+      price: "₹5,000",
+      period: "/ 6 months",
       popular: false,
-      features: ["Full gym access", "Premium locker", "Unlimited group classes", "Custom diet & workout plan", "4 PT sessions/month", "Free gym merchandise"],
+      features: ["Full gym access", "Premium locker", "Custom diet & workout plan"],
+    },
+    {
+      name: "12 Months",
+      price: "₹8,000",
+      period: "/ 1 year + 1 MONTH FREE",
+      popular: false,
+      features: ["13 Months Access", "Premium locker", "Custom diet & workout plan"],
     },
   ];
 

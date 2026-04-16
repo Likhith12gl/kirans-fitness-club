@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Fitness Blog — Workout Tips & Nutrition Advice",
   description:
     "Expert fitness tips, workout guides, and nutrition advice from the certified trainers at Kiran's Fitness Club, Anjananagar, Bangalore.",
-  alternates: { canonical: "https://kirans-fitness-club.vercel.app/blog" },
+  alternates: { canonical: "https://kiransfitnessclub.com/blog" },
   openGraph: {
     title: "Fitness Blog | Kiran's Fitness Club",
     description: "Expert fitness tips, workout guides, and nutrition advice from certified trainers at Kiran's Fitness Club, Bangalore.",
-    url: "https://kirans-fitness-club.vercel.app/blog",
+    url: "https://kiransfitnessclub.com/blog",
     type: "website",
   },
   twitter: {

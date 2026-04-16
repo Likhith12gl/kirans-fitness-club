@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Best Gym in Anjananagar, Bangalore — Kiran's Fitness Club",
   description:
     "Looking for the best gym in Anjananagar? Kiran's Fitness Club offers world-class equipment, certified personal trainers, and group fitness classes near Magadi Main Road. Join today!",
-  alternates: { canonical: "https://kirans-fitness-club.vercel.app/gym-in-anjananagar" },
+  alternates: { canonical: "https://kiransfitnessclub.com/gym-in-anjananagar" },
   openGraph: {
     title: "Best Gym in Anjananagar | Kiran's Fitness Club",
     description: "World-class equipment, certified trainers, and group fitness classes in Anjananagar, Bangalore.",
-    url: "https://kirans-fitness-club.vercel.app/gym-in-anjananagar",
+    url: "https://kiransfitnessclub.com/gym-in-anjananagar",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Best Gym in Anjananagar | Kiran's Fitness Club", description: "World-class facilities and expert trainers in Anjananagar, Bangalore." },

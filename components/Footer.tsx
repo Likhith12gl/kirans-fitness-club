@@ -30,9 +30,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
-  { href: "https://youtube.com", icon: YoutubeIcon, label: "YouTube" },
-  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://www.instagram.com/kiransfitnessclub?igsh=MXZmcmd1MGF6OGx6Zg%3D%3D&utm_source=qr", icon: InstagramIcon, label: "Instagram" },
 ];
 
 export default function Footer() {
@@ -79,18 +77,20 @@ export default function Footer() {
               <li className="flex items-start gap-2 text-text-secondary text-sm">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-accent" />
                 <span>
-                  Anjananagar, Near Magadi Main Road,
+                  9, 10, Shivakrupa Complex,
                   <br />
-                  Bangalore - 560023
+                  Bharath Nagar, Bedarahalli,
+                  <br />
+                  Bengaluru - 560091
                 </span>
               </li>
               <li className="flex items-center gap-2 text-text-secondary text-sm">
                 <Phone size={16} className="shrink-0 text-accent" />
-                <span>+91 XXXXXXXXXX</span>
+                <span>+91 8179376067</span>
               </li>
               <li className="flex items-center gap-2 text-text-secondary text-sm">
                 <Mail size={16} className="shrink-0 text-accent" />
-                <span>info@kiransfitness.com</span>
+                <span>29nkiran@gmail.com</span>
               </li>
             </ul>
           </div>

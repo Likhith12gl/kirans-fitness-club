@@ -41,9 +41,8 @@ export default function ContactClient() {
                   <div>
                     <h3 className="text-white font-bold mb-1">Gym Location</h3>
                     <p className="text-text-secondary">
-                      #123, Magadi Main Road, Anjananagar<br />Bangalore, Karnataka 560091
+                      9, 10, Shivakrupa Complex, E W College Main Rd<br />Bharath Nagar, 1st Stage, Bedarahalli<br />Bengaluru, Karnataka 560091
                     </p>
-                    <p className="text-text-secondary text-sm mt-1">Near Bath Road junction, Rajajinagar area</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -52,7 +51,7 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <h3 className="text-white font-bold mb-1">Phone / WhatsApp</h3>
-                    <a href="tel:+919019688582" className="text-text-secondary hover:text-accent transition">+91 90196 88582</a>
+                    <a href="tel:+918179376067" className="text-text-secondary hover:text-accent transition">+91 8179376067</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -61,7 +60,7 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <h3 className="text-white font-bold mb-1">Email</h3>
-                    <a href="mailto:contact@kiransfitness.com" className="text-text-secondary hover:text-accent transition">contact@kiransfitness.com</a>
+                    <a href="mailto:29nkiran@gmail.com" className="text-text-secondary hover:text-accent transition">29nkiran@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -71,7 +70,7 @@ export default function ContactClient() {
                   <div>
                     <h3 className="text-white font-bold mb-1">Opening Hours</h3>
                     <p className="text-text-secondary">
-                      Mon–Sat: 5:30 AM – 10:00 PM<br />Sunday: 6:00 AM – 12:00 PM
+                      Mon–Sat: 5:30 AM – 10:00 PM<br />Sunday: 7:00 AM – 12:00 PM
                     </p>
                   </div>
                 </div>

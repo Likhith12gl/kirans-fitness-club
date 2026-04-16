@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Gym Events, Competitions & Workshops",
   description:
     "Join upcoming powerlifting meets, CrossFit circuits, trekking events, and community fitness challenges at Kiran's Fitness Club, Anjananagar, Bangalore.",
-  alternates: { canonical: "https://kirans-fitness-club.vercel.app/events" },
+  alternates: { canonical: "https://kiransfitnessclub.com/events" },
   openGraph: {
     title: "Gym Events & Competitions | Kiran's Fitness Club",
     description: "Powerlifting meets, CrossFit circuits, and community fitness events at Kiran's Fitness Club, Anjananagar, Bangalore.",
-    url: "https://kirans-fitness-club.vercel.app/events",
+    url: "https://kiransfitnessclub.com/events",
     type: "website",
   },
   twitter: {

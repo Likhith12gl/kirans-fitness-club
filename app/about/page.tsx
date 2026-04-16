@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "About Us — Kiran Kumar & Our Fitness Story",
   description:
     "Learn how Kiran's Fitness Club was founded by Mr. Bangalore Kiran Kumar — 20 years in fitness, 4000+ members trained. The best gym in Anjananagar, Bangalore.",
-  alternates: { canonical: "https://kirans-fitness-club.vercel.app/about" },
+  alternates: { canonical: "https://kiransfitnessclub.com/about" },
   openGraph: {
     title: "About Kiran's Fitness Club | Gym in Anjananagar, Bangalore",
     description: "Kiran Kumar's 20-year fitness journey and how he built Anjananagar's most trusted gym.",
-    url: "https://kirans-fitness-club.vercel.app/about",
+    url: "https://kiransfitnessclub.com/about",
     type: "website",
   },
   twitter: {

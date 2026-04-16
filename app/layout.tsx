@@ -5,7 +5,7 @@ import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const SITE_URL = "https://kirans-fitness-club.vercel.app";
+const SITE_URL = "https://kiransfitnessclub.com";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
