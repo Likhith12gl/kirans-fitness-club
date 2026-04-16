@@ -2,8 +2,17 @@ import LocationPageTemplate from "@/components/seo/LocationPageTemplate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Top Rated Gym Near Bath Road | Kiran's Fitness Club",
-  description: "Looking for a top-rated gym near Bath Road? Kiran's Fitness Club provides elite strength equipment, dynamic CrossFit classes, and expert personal trainers.",
+  title: "Gym Near Bath Road, Bangalore — Kiran's Fitness Club",
+  description:
+    "Looking for a top gym near Bath Road, Bangalore? Kiran's Fitness Club provides elite strength equipment, dynamic CrossFit classes, and expert personal trainers in Anjananagar.",
+  alternates: { canonical: "https://kirans-fitness-club.vercel.app/gym-near-bath-road" },
+  openGraph: {
+    title: "Gym Near Bath Road | Kiran's Fitness Club, Bangalore",
+    description: "Elite gym near Bath Road, Bangalore. CrossFit, strength training, personal coaching in Anjananagar.",
+    url: "https://kirans-fitness-club.vercel.app/gym-near-bath-road",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Gym Near Bath Road | Kiran's Fitness Club", description: "Top gym near Bath Road, Bangalore. Expert coaching and premium equipment at Anjananagar." },
 };
 
 export default function BathRoadPage() {

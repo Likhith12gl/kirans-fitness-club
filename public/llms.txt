@@ -1,0 +1,48 @@
+# Kiran's Fitness Club
+
+> Anjananagar's premier gym on Magadi Main Road, Bangalore — offering expert personal training, modern equipment, and affordable membership plans.
+
+## About
+
+Kiran's Fitness Club is a professional fitness center located at #123 Magadi Main Road, Anjananagar, Bangalore, Karnataka 560091, India.
+
+Founded by Mr. Bangalore Kiran Kumar — a fitness professional with 20+ years of experience and 4000+ members trained — the club provides world-class gym facilities to residents of Anjananagar, Magadi Road, Bath Road, Rajajinagar, Vijayanagar, and surrounding areas.
+
+## Services
+
+- Full gym access with premium imported strength equipment
+- Certified personal training (1-on-1 sessions)
+- Group fitness classes (HIIT, CrossFit basics, strength training)
+- Custom diet and nutrition planning
+- Cardio and stretching zones
+- Spacious locker facilities
+
+## Membership Plans
+
+- Monthly Plan: ₹1,500/month
+- Quarterly Plan: ₹4,000/3 months (most popular)
+- Annual Plan: ₹12,000/year
+
+## Opening Hours
+
+- Monday to Saturday: 5:30 AM – 10:00 PM
+- Sunday: 6:00 AM – 12:00 PM
+
+## Contact
+
+- Address: #123, Magadi Main Road, Anjananagar, Bangalore 560091
+- Phone/WhatsApp: +91 90196 88582
+- Email: contact@kiransfitness.com
+- Website: https://kirans-fitness-club.vercel.app
+
+## Pages
+
+- Home: https://kirans-fitness-club.vercel.app/
+- Services & Pricing: https://kirans-fitness-club.vercel.app/services
+- About: https://kirans-fitness-club.vercel.app/about
+- Contact: https://kirans-fitness-club.vercel.app/contact
+- Blog: https://kirans-fitness-club.vercel.app/blog
+- Events: https://kirans-fitness-club.vercel.app/events
+- Gym in Anjananagar: https://kirans-fitness-club.vercel.app/gym-in-anjananagar
+- Gym near Magadi Road: https://kirans-fitness-club.vercel.app/gym-near-magadi-road
+- Gym near Bath Road: https://kirans-fitness-club.vercel.app/gym-near-bath-road

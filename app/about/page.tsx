@@ -2,8 +2,21 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Kiran's Fitness Club",
-  description: "Learn about our mission, our story, and the man completely dedicated to your physical success.",
+  title: "About Us — Kiran Kumar & Our Fitness Story",
+  description:
+    "Learn how Kiran's Fitness Club was founded by Mr. Bangalore Kiran Kumar — 20 years in fitness, 4000+ members trained. The best gym in Anjananagar, Bangalore.",
+  alternates: { canonical: "https://kirans-fitness-club.vercel.app/about" },
+  openGraph: {
+    title: "About Kiran's Fitness Club | Gym in Anjananagar, Bangalore",
+    description: "Kiran Kumar's 20-year fitness journey and how he built Anjananagar's most trusted gym.",
+    url: "https://kirans-fitness-club.vercel.app/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Kiran's Fitness Club | Gym in Anjananagar",
+    description: "20 years in fitness, 4000+ members trained. Kiran Kumar's story and Anjananagar's best gym.",
+  },
 };
 
 export default function AboutPage() {

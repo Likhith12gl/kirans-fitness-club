@@ -7,8 +7,21 @@ import { Metadata } from "next";
 export const revalidate = 60; 
 
 export const metadata: Metadata = {
-  title: "Gym Events & Competitions | Kiran's Fitness Club",
-  description: "Stay updated with upcoming powerlifting meets, CrossFit circuits, and community fitness events at Kiran's Fitness Club.",
+  title: "Gym Events, Competitions & Workshops",
+  description:
+    "Join upcoming powerlifting meets, CrossFit circuits, trekking events, and community fitness challenges at Kiran's Fitness Club, Anjananagar, Bangalore.",
+  alternates: { canonical: "https://kirans-fitness-club.vercel.app/events" },
+  openGraph: {
+    title: "Gym Events & Competitions | Kiran's Fitness Club",
+    description: "Powerlifting meets, CrossFit circuits, and community fitness events at Kiran's Fitness Club, Anjananagar, Bangalore.",
+    url: "https://kirans-fitness-club.vercel.app/events",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym Events & Competitions | Kiran's Fitness Club",
+    description: "Community fitness events, workshops, and competitions at Kiran's Fitness Club, Bangalore.",
+  },
 };
 
 export default async function EventsPage() {

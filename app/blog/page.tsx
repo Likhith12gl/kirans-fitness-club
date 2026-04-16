@@ -7,8 +7,21 @@ import { Metadata } from "next";
 export const revalidate = 60; // ISR cache validation every 60s
 
 export const metadata: Metadata = {
-  title: "Fitness Blog | Kiran's Fitness Club",
-  description: "Read the latest fitness insights, workout tips, and nutritional advice from the expert trainers at Kiran's Fitness Club.",
+  title: "Fitness Blog — Workout Tips & Nutrition Advice",
+  description:
+    "Expert fitness tips, workout guides, and nutrition advice from the certified trainers at Kiran's Fitness Club, Anjananagar, Bangalore.",
+  alternates: { canonical: "https://kirans-fitness-club.vercel.app/blog" },
+  openGraph: {
+    title: "Fitness Blog | Kiran's Fitness Club",
+    description: "Expert fitness tips, workout guides, and nutrition advice from certified trainers at Kiran's Fitness Club, Bangalore.",
+    url: "https://kirans-fitness-club.vercel.app/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fitness Blog | Kiran's Fitness Club",
+    description: "Expert fitness tips and nutrition advice from Kiran's Fitness Club, Anjananagar, Bangalore.",
+  },
 };
 
 export default async function BlogPage() {

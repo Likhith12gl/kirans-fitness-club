@@ -3,8 +3,21 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fitness Services & Pricing | Kiran's Fitness Club",
-  description: "View our gym membership plans, personal training services, and group classes in Anjananagar.",
+  title: "Gym Membership Plans & Pricing — Monthly, Quarterly, Annual",
+  description:
+    "Affordable gym membership plans at Kiran's Fitness Club, Anjananagar. Monthly (₹1,500), Quarterly (₹4,000), and Annual (₹12,000) plans with personal training and group classes in Bangalore.",
+  alternates: { canonical: "https://kirans-fitness-club.vercel.app/services" },
+  openGraph: {
+    title: "Gym Membership Plans & Pricing | Kiran's Fitness Club",
+    description: "Affordable gym plans in Anjananagar, Bangalore — Monthly ₹1,500, Quarterly ₹4,000, Annual ₹12,000. Personal training and group classes included.",
+    url: "https://kirans-fitness-club.vercel.app/services",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym Membership Pricing | Kiran's Fitness Club, Bangalore",
+    description: "Monthly, Quarterly, and Annual gym plans in Anjananagar, Bangalore. No hidden fees.",
+  },
 };
 
 export default function ServicesPage() {
