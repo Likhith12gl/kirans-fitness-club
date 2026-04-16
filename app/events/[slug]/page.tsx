@@ -3,54 +3,58 @@ import dbConnect from "@/lib/db";
 import Post from "@/models/Post";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
-
 import { ArrowLeft, Calendar, MapPin } from "lucide-react";
 import BlogImageCarousel from "@/components/cms/BlogImageCarousel";
 
 export const revalidate = 60;
 
+/** Safe server-side HTML sanitizer — strips dangerous patterns only.
+ *  Content is admin-authored (trusted). */
+function sanitizeHtml(html: string): string {
+  return html
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+    .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "")
+    .replace(/\bon\w+\s*=\s*(['"])[^'"]*\1/gi, "")
+    .replace(/javascript\s*:/gi, "");
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  await dbConnect();
-  const post = await Post.findOne({ slug: params.slug, type: "event", status: "published" }).lean() as any;
+  try {
+    await dbConnect();
+    const post = await Post.findOne({ slug: params.slug, type: "event", status: "published" }).lean() as any;
+    if (!post) return { title: "Event Not Found | Kiran's Fitness Club" };
 
-  if (!post) return { title: "Event Not Found" };
+    const ogImage = post.images?.[0]?.startsWith("data:") ? undefined : post.images?.[0];
+    const postDate = new Date(post.createdAt || Date.now());
 
-  const ogImage = post.images?.[0] || "/icon.png";
-  const postDate = new Date(post.createdAt || Date.now());
-
-  return {
-    title: `${post.title} | Events | Kiran's Fitness Club`,
-    description: post.excerpt || "Stay updated with fitness events and workshops happening at Kiran's Fitness Club, Anjananagar, Bangalore.",
-    keywords: ["gym events Bangalore", "fitness events Anjananagar", "Kiran's Fitness Club events", post.title],
-    authors: [{ name: "Kiran's Fitness Club" }],
-    openGraph: {
-      title: `${post.title} | Kiran's Fitness Club Events`,
-      description: post.excerpt || "A special fitness event at Kiran's Fitness Club.",
-      type: "article",
-      publishedTime: postDate.toISOString(),
-      url: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
-      siteName: "Kiran's Fitness Club",
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | Kiran's Fitness Club`,
-      description: post.excerpt || "A special fitness event in Bangalore.",
-      images: [ogImage],
-    },
-    alternates: {
-      canonical: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
-    },
-  };
+    return {
+      title: `${post.title} | Events | Kiran's Fitness Club`,
+      description: post.excerpt || "Stay updated with fitness events and workshops at Kiran's Fitness Club, Anjananagar, Bangalore.",
+      keywords: ["gym events Bangalore", "fitness events Anjananagar", "Kiran's Fitness Club events"],
+      authors: [{ name: "Kiran's Fitness Club" }],
+      openGraph: {
+        title: `${post.title} | Kiran's Fitness Club Events`,
+        description: post.excerpt || "A special fitness event at Kiran's Fitness Club.",
+        type: "article",
+        publishedTime: postDate.toISOString(),
+        url: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
+        siteName: "Kiran's Fitness Club",
+        ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }] }),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${post.title} | Kiran's Fitness Club`,
+        description: post.excerpt || "A special fitness event in Bangalore.",
+        ...(ogImage && { images: [ogImage] }),
+      },
+      alternates: {
+        canonical: `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
+      },
+    };
+  } catch {
+    return { title: "Events | Kiran's Fitness Club" };
+  }
 }
 
 export default async function EventPostPage({ params }: { params: { slug: string } }) {
@@ -60,7 +64,7 @@ export default async function EventPostPage({ params }: { params: { slug: string
 
     if (!post) notFound();
 
-    const cleanHtml = DOMPurify.sanitize(post.content || "");
+    const cleanHtml = sanitizeHtml(post.content || "");
     const postDate = post.createdAt instanceof Date ? post.createdAt : new Date(post.createdAt || Date.now());
 
     const eventSchema = {
@@ -70,7 +74,6 @@ export default async function EventPostPage({ params }: { params: { slug: string
       "startDate": postDate.toISOString(),
       "endDate": postDate.toISOString(),
       "description": post.excerpt || "A special fitness event at Kiran's Fitness Club.",
-      "image": post.images?.[0] || "",
       "url": `https://kirans-fitness-club.vercel.app/events/${params.slug}`,
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -179,15 +182,12 @@ export default async function EventPostPage({ params }: { params: { slug: string
       </main>
     );
   } catch (err: any) {
-    console.error("Critical Event Detail Error:", err);
+    console.error("Event Detail Error:", err);
     return (
       <main className="pt-32 pb-20 bg-background min-h-screen flex items-center justify-center">
         <div className="card p-8 border border-red-500/50 text-center max-w-lg">
           <h2 className="text-2xl font-bold text-red-500 mb-4">Event Load Error</h2>
-          <p className="text-text-secondary mb-6">We encountered a technical issue while loading this event.</p>
-          <code className="block p-4 bg-black/50 rounded text-xs text-red-400 text-left overflow-auto mb-6">
-            Error: {err.message || "Unknown server error"}
-          </code>
+          <p className="text-text-secondary mb-6">We encountered a technical issue while loading this event. Please try again shortly.</p>
           <Link href="/events" className="btn-primary inline-block">Back to Events</Link>
         </div>
       </main>
