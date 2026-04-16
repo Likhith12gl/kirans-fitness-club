@@ -1,8 +1,8 @@
 export default function StatCards() {
   const stats = [
-    { label: "Active Members", value: "500+" },
-    { label: "Years Experience", value: "10+" },
-    { label: "Expert Trainers", value: "8" },
+    { label: "Active Members", value: "70+" },
+    { label: "Years Experience", value: "20+" },
+    { label: "Bio Mechanism Special Equipments", value: "Brand New" },
     { label: "Sqft Facility", value: "4000+" },
   ];
 
