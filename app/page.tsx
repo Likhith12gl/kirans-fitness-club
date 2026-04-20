@@ -4,6 +4,7 @@ import StatCards from "@/components/home/StatCards";
 import SchemaOrg from "@/components/seo/SchemaOrg";
 import ServicePreviews from "@/components/home/ServicePreviews";
 import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
 import LocationCTA from "@/components/home/LocationCTA";
 
 const SITE_URL = "https://kiransfitnessclub.com";
@@ -31,6 +32,7 @@ export default function Home() {
       <StatCards />
       <ServicePreviews />
       <Testimonials />
+      <FAQ />
       <LocationCTA />
     </main>
   );
