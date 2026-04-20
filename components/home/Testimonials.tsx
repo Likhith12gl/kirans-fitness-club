@@ -2,10 +2,21 @@ import { Star } from "lucide-react";
 
 export default function Testimonials() {
   const testimonials = [
-    { name: "Rahul S.", text: "Best gym in Anjananagar! The equipment is top-notch and trainers are always helpful.", role: "Member for 2 years" },
-    { name: "Priya M.", text: "Lost 10kg in 4 months with their personal training program. Life changing experience.", role: "Member for 6 months" },
-    { name: "Karthik R.", text: "Great atmosphere, never too crowded, and the staff actually cares about your form.", role: "Member for 1 year" },
-    { name: "Deepa K.", text: "The group classes are amazing. Best decision I made for my fitness journey.", role: "Member for 3 years" },
+    {
+      name: "Anilmanasa 24",
+      role: "Member",
+      text: "I recently joined this new gym, and I’m honestly impressed! The equipment is brand new, modern, and top quality. The coach is super friendly, helpful, knowledgeable and motivating. Highly recommend!",
+    },
+    {
+      name: "Hemanth Kumar",
+      role: "Member",
+      text: "This gym offers a well-maintained facility and a positive workout environment. The trainer is approachable, experienced, and provides personalized attention to help achieve fitness goals. Their guidance on form and diet has made a big difference.",
+    },
+    {
+      name: "Mohit R",
+      role: "Member",
+      text: "Great place to workout! Trainer is the best thing about the place here. Feels like you have taken personal training even though with no extra fees. Must join to everyone and it’s affordable as well.",
+    },
   ];
 
   return (
