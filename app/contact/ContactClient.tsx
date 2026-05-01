@@ -51,7 +51,7 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <h3 className="text-white font-bold mb-1">Phone / WhatsApp</h3>
-                    <a href="tel:+918179376067" className="text-text-secondary hover:text-accent transition">+91 8179376067</a>
+                    <a href="tel:+918197376067" className="text-text-secondary hover:text-accent transition">+91 8197376067</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

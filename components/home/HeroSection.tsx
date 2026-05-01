@@ -51,7 +51,7 @@ export default function HeroSection() {
             View Memberships
           </Link>
           <a
-            href="https://wa.me/918179376067?text=Hi%2C%20I%27d%20like%20to%20claim%20a%20free%20trial%20at%20Kiran%27s%20Fitness%20Club%21"
+            href="https://wa.me/918197376067?text=Hi%2C%20I%27d%20like%20to%20claim%20a%20free%20trial%20at%20Kiran%27s%20Fitness%20Club%21"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary w-full sm:w-auto px-8 py-4 text-lg bg-white/5 border-white/10 hover:bg-white/10 text-white inline-block text-center"

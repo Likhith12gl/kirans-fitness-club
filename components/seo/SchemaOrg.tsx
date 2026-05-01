@@ -9,7 +9,7 @@ export default function SchemaOrg() {
     "image": `${SITE_URL}/og-image.jpg`,
     "@id": `${SITE_URL}/#localbusiness`,
     "url": SITE_URL,
-    "telephone": "+918179376067",
+    "telephone": "+918197376067",
     "email": "29nkiran@gmail.com",
     "description": "Kiran's Fitness Club is Anjananagar's premier gym, offering world-class equipment, certified personal trainers, group fitness classes, and affordable membership plans.",
     "address": {
