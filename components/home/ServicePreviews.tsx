@@ -3,12 +3,12 @@ import { Dumbbell, HeartPulse, Activity, Trophy, Users, Clock } from "lucide-rea
 
 export default function ServicePreviews() {
   const services = [
-    { icon: Dumbbell, title: "Weight Training", desc: "Premium free weights and resistance machines." },
-    { icon: HeartPulse, title: "Cardio Zone", desc: "Treadmills, ellipticals, and rowers." },
-    { icon: Users, title: "Group Classes", desc: "High-energy sessions led by experts." },
-    { icon: Trophy, title: "Personal Training", desc: "1-on-1 coaching to hit your goals." },
-    { icon: Activity, title: "CrossFit", desc: "Functional fitness for all levels." },
-    { icon: Clock, title: "Flexible Hours", desc: "Open early and late to fit your schedule." },
+    { icon: Dumbbell, title: "Strength Training & Muscle Building", desc: "Premium free weights and resistance machines for serious gains." },
+    { icon: HeartPulse, title: "Weight Loss Programs Near You", desc: "Burn fat with our dedicated cardio zones and expert routines." },
+    { icon: Users, title: "Group Fitness Classes", desc: "High-energy sessions led by Bangalore's best experts." },
+    { icon: Trophy, title: "Personal Training in Anjananagar", desc: "1-on-1 coaching to hit your exact fitness goals." },
+    { icon: Activity, title: "CrossFit & Functional", desc: "Dynamic workouts for real-world strength and stamina." },
+    { icon: Clock, title: "Flexible Gym Timings", desc: "Open early and late to fit your busy Bangalore schedule." },
   ];
 
   return (

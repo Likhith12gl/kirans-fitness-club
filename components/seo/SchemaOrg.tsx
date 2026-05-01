@@ -6,7 +6,7 @@ export default function SchemaOrg() {
     "@type": ["LocalBusiness", "HealthClub"],
     "name": "Kiran's Fitness Club",
     "alternateName": "Kirans Fitness Club Anjananagar",
-    "image": `${SITE_URL}/icon.png`,
+    "image": `${SITE_URL}/og-image.jpg`,
     "@id": `${SITE_URL}/#localbusiness`,
     "url": SITE_URL,
     "telephone": "+918179376067",
@@ -60,7 +60,7 @@ export default function SchemaOrg() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
-      "reviewCount": "120",
+      "reviewCount": "127",
       "bestRating": "5"
     }
   };

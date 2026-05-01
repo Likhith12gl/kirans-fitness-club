@@ -24,12 +24,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Kiran's Fitness Club | Best Gym in Anjananagar, Bangalore",
+    default: "Kiran's Fitness Club — Best Gym in Anjananagar, Bangalore | Free Trial",
     // Pages must NOT already include "Kiran's Fitness Club" — template appends it
     template: "%s | Kiran's Fitness Club",
   },
   description:
-    "Kiran's Fitness Club — Anjananagar's most trusted gym near Magadi Main Road, Bangalore. Expert personal trainers, modern equipment, affordable membership plans. Join today!",
+    "Join Anjananagar's top-rated gym. Personal training, weight loss programs & strength coaching. 500+ members. Walk in for a FREE trial today!",
   keywords: [
     "gym in Anjananagar",
     "best gym Bangalore",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: "Kiran's Fitness Club",
-    title: "Kiran's Fitness Club | Best Gym in Anjananagar, Bangalore",
+    title: "Kiran's Fitness Club — Best Gym in Anjananagar, Bangalore | Free Trial",
     description:
-      "Kiran's Fitness Club — Anjananagar's most trusted gym near Magadi Main Road, Bangalore. Expert personal trainers, modern equipment, affordable plans.",
+      "Join Anjananagar's top-rated gym. Personal training, weight loss programs & strength coaching. 500+ members. Walk in for a FREE trial today!",
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kiran's Fitness Club | Best Gym in Anjananagar, Bangalore",
+    title: "Kiran's Fitness Club — Best Gym in Anjananagar, Bangalore | Free Trial",
     description:
-      "Anjananagar's most trusted gym. Expert trainers, modern equipment, affordable plans near Magadi Main Road, Bangalore.",
+      "Join Anjananagar's top-rated gym. Personal training, weight loss programs & strength coaching. 500+ members. Walk in for a FREE trial today!",
     images: [`${SITE_URL}/og-image.jpg`],
   },
 };

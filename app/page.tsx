@@ -11,14 +11,14 @@ const SITE_URL = "https://kiransfitnessclub.com";
 
 export const metadata: Metadata = {
   // Use the root layout default — no template applied for homepage
-  title: "Kiran's Fitness Club | Best Gym in Anjananagar, Bangalore",
+  title: "Kiran's Fitness Club — Best Gym in Anjananagar, Bangalore | Free Trial",
   description:
-    "Join Kiran's Fitness Club in Anjananagar, Bangalore. Get premium equipment, expert trainers, and affordable membership plans. Start your fitness journey today!",
+    "Join Anjananagar's top-rated gym. Personal training, weight loss programs & strength coaching. 500+ members. Walk in for a FREE trial today!",
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Kiran's Fitness Club | Best Gym in Anjananagar, Bangalore",
+    title: "Kiran's Fitness Club — Best Gym in Anjananagar, Bangalore | Free Trial",
     description:
-      "Join Kiran's Fitness Club in Anjananagar. Premium equipment, expert trainers, and flexible plans. Start your fitness journey today!",
+      "Join Anjananagar's top-rated gym. Personal training, weight loss programs & strength coaching. 500+ members. Walk in for a FREE trial today!",
     url: SITE_URL,
     type: "website",
   },

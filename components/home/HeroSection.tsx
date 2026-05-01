@@ -20,7 +20,7 @@ export default function HeroSection() {
         >
           <Image
             src="/gym-bg.png"
-            alt="Kiran's Fitness Club interior"
+            alt="Weight training gym floor at Kiran's Fitness Club, Anjananagar Bangalore"
             fill
             priority
             quality={100}
@@ -40,12 +40,12 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16"
       >
-        <h1 className="text-5xl md:text-7xl font-heading font-black text-white mb-6 uppercase tracking-tight">
-          Transform Your <span className="text-accent">Physique</span>
+        <h1 className="text-4xl md:text-6xl font-heading font-black text-white mb-6 uppercase tracking-tight">
+          Best Gym in <span className="text-accent">Anjananagar</span>, Bangalore
         </h1>
-        <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto font-light">
-          Anjananagar&apos;s premier fitness destination. Experience elite equipment, expert guidance, and a community that pushes you further.
-        </p>
+        <h2 className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto font-light">
+          Anjananagar&apos;s top-rated gym for personal training, weight loss & strength coaching.
+        </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/services" className="btn-primary w-full sm:w-auto px-8 py-4 text-lg">
             View Memberships
