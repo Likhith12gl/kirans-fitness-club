@@ -4,7 +4,7 @@ import GalleryImage from "@/models/GalleryImage";
 import { Metadata } from "next";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Gym Gallery — Photos of Our Facility & Equipment",
