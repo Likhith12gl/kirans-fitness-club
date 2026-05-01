@@ -4,9 +4,38 @@ Allow: /
 Disallow: /admin
 Disallow: /dashboard
 Disallow: /api
+Disallow: /login
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+
+# OAI-SearchBot
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
 
 # Host
-Host: https://kiransfitness.com
+Host: https://kiransfitnessclub.com
 
 # Sitemaps
-Sitemap: https://kiransfitness.com/sitemap.xml
+Sitemap: https://kiransfitnessclub.com/sitemap.xml
