@@ -23,7 +23,7 @@ export default function HeroSection() {
             alt="Weight training gym floor at Kiran's Fitness Club, Anjananagar Bangalore"
             fill
             priority
-            quality={100}
+            quality={85}
             className="object-cover"
           />
         </motion.div>
@@ -44,15 +44,20 @@ export default function HeroSection() {
           Best Gym in <span className="text-accent">Anjananagar</span>, Bangalore
         </h1>
         <h2 className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto font-light">
-          Anjananagar&apos;s top-rated gym for personal training, weight loss & strength coaching.
+          Anjananagar&apos;s top-rated gym for personal training, weight loss &amp; strength coaching.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/services" className="btn-primary w-full sm:w-auto px-8 py-4 text-lg">
             View Memberships
           </Link>
-          <Link href="/contact" className="btn-secondary w-full sm:w-auto px-8 py-4 text-lg bg-white/5 border-white/10 hover:bg-white/10 text-white">
-            Free Trial Class
-          </Link>
+          <a
+            href="https://wa.me/918179376067?text=Hi%2C%20I%27d%20like%20to%20claim%20a%20free%20trial%20at%20Kiran%27s%20Fitness%20Club%21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary w-full sm:w-auto px-8 py-4 text-lg bg-white/5 border-white/10 hover:bg-white/10 text-white inline-block text-center"
+          >
+            Free Trial on WhatsApp
+          </a>
         </div>
       </motion.div>
     </section>

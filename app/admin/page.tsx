@@ -46,7 +46,7 @@ export default async function AdminDashboardPage() {
 
         {/* Expiring < 7 Days — clickable → /admin/users?filter=expiring */}
         <Link
-          href="/admin/users?filter=expiring"
+          href="/admin/expiring"
           className="card p-6 border border-border border-l-4 border-l-yellow-500 flex items-center gap-6 hover:border-yellow-500/70 hover:bg-yellow-500/5 transition-all group"
         >
           <div className="bg-yellow-500/10 p-4 rounded-full text-yellow-500 group-hover:bg-yellow-500/20 transition-colors">
@@ -76,7 +76,7 @@ export default async function AdminDashboardPage() {
       </div>
 
       <h2 className="text-xl font-bold text-white mb-6">Quick Actions</h2>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Link href="/admin/users/new" className="card p-6 border border-border hover:border-accent transition group flex items-center justify-between">
           <span className="font-bold text-white group-hover:text-accent transition">Add New Member</span>
           <Users className="w-5 h-5 text-text-secondary group-hover:text-accent transition" />
@@ -85,6 +85,11 @@ export default async function AdminDashboardPage() {
         <Link href="/admin/posts/new" className="card p-6 border border-border hover:border-accent transition group flex items-center justify-between">
           <span className="font-bold text-white group-hover:text-accent transition">Publish Content</span>
           <FileText className="w-5 h-5 text-text-secondary group-hover:text-accent transition" />
+        </Link>
+
+        <Link href="/admin/expiring" className="card p-6 border border-border hover:border-yellow-500/50 transition group flex items-center justify-between">
+          <span className="font-bold text-white group-hover:text-yellow-400 transition">Expiring Members</span>
+          <AlertTriangle className="w-5 h-5 text-text-secondary group-hover:text-yellow-400 transition" />
         </Link>
 
         <div className="card p-6 border border-border hover:border-accent transition group flex items-center justify-between opacity-50 cursor-not-allowed">

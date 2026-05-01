@@ -39,7 +39,7 @@
   }
 
   .card {
-    @apply bg-surface border border-border rounded-card p-4 hover:border-border-hover hover:scale-[1.02] transition-all duration-200;
+    @apply bg-surface border border-border rounded-card p-4 hover:border-border-hover transition-all duration-200;
   }
 
   .section-padding {
