@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
     await dbConnect();
     const body = await request.json();
-    const { name, email, password, plan, days } = body;
+    const { name, email, phone, password, plan, days } = body;
 
     if (!name || !email || !password) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -47,6 +47,7 @@ export async function POST(request: Request) {
     const user = await User.create({
       name,
       email,
+      phone: phone || "",
       password: hashedPassword,
       role: "user",
       plan: plan || "None",

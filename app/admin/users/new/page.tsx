@@ -2,19 +2,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, UserPlus, Mail, Lock, CalendarDays, CreditCard, Phone } from "lucide-react";
 
 export default function NewUserPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     password: "",
     plan: "Monthly",
     days: "30",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +33,11 @@ export default function NewUserPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
       
-      router.push("/admin/users");
-      router.refresh();
+      setSuccess(true);
+      setTimeout(() => {
+        router.push("/admin/users");
+        router.refresh();
+      }, 800);
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -42,56 +47,112 @@ export default function NewUserPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      {/* Header */}
       <div className="flex items-center gap-4 mb-8">
-        <Link href="/admin/users" className="text-text-secondary hover:text-white transition">
-          <ArrowLeft className="w-6 h-6" />
+        <Link
+          href="/admin/users"
+          className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-text-secondary hover:text-white hover:border-white/20 transition"
+        >
+          <ArrowLeft className="w-5 h-5" />
         </Link>
-        <h1 className="text-3xl font-heading font-bold text-white uppercase">Add New Member</h1>
+        <div>
+          <h1 className="text-2xl font-heading font-bold text-white uppercase tracking-tight">Add New Member</h1>
+          <p className="text-text-muted text-sm">Register a new gym member with login credentials</p>
+        </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="card p-6 border border-border space-y-6">
-        {error && <div className="p-4 bg-red-500/10 border border-red-500/50 text-red-500 rounded-md">{error}</div>}
-        
-        <div className="grid gap-6">
-          <div className="space-y-2">
-            <label className="text-text-secondary text-sm font-bold">Full Name</label>
-            <input 
-              type="text" 
-              required 
-              className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
-              value={formData.name}
-              onChange={e => setFormData({...formData, name: e.target.value})}
-            />
-          </div>
-          
-          <div className="space-y-2">
-            <label className="text-text-secondary text-sm font-bold">Email Address</label>
-            <input 
-              type="email" 
-              required 
-              className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
-              value={formData.email}
-              onChange={e => setFormData({...formData, email: e.target.value})}
-            />
-          </div>
+      {/* Success banner */}
+      {success && (
+        <div className="mb-6 p-4 rounded-xl border border-green-500/30 bg-green-500/10 text-green-400 flex items-center gap-3">
+          <span className="text-lg">✓</span>
+          <span className="font-semibold text-sm">Member created successfully! Redirecting...</span>
+        </div>
+      )}
 
-          <div className="space-y-2">
-            <label className="text-text-secondary text-sm font-bold">Initial Password</label>
-            <input 
-              type="password" 
-              required 
-              minLength={6}
-              className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
-              value={formData.password}
-              onChange={e => setFormData({...formData, password: e.target.value})}
-            />
+      <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-surface p-8 space-y-8">
+        {error && (
+          <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+            {error}
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
+        )}
+        
+        {/* Personal Info */}
+        <div>
+          <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-5 flex items-center gap-2">
+            <UserPlus className="w-4 h-4 text-accent" /> Personal Info
+          </h3>
+          <div className="grid gap-5">
             <div className="space-y-2">
-              <label className="text-text-secondary text-sm font-bold">Subscription Plan</label>
+              <label className="text-text-muted text-xs font-semibold uppercase tracking-wider">Full Name</label>
+              <input 
+                type="text" 
+                required 
+                className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition placeholder:text-text-muted"
+                value={formData.name}
+                onChange={e => setFormData({...formData, name: e.target.value})}
+                placeholder="e.g. Rahul Sharma"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="space-y-2">
+                <label className="text-text-muted text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5" /> Email Address
+                </label>
+                <input 
+                  type="email" 
+                  required 
+                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition placeholder:text-text-muted"
+                  value={formData.email}
+                  onChange={e => setFormData({...formData, email: e.target.value})}
+                  placeholder="member@email.com"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-text-muted text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5" /> Mobile Number
+                </label>
+                <input 
+                  type="tel" 
+                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition placeholder:text-text-muted"
+                  value={formData.phone}
+                  onChange={e => setFormData({...formData, phone: e.target.value})}
+                  placeholder="+91 81793 76067"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-text-muted text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                <Lock className="w-3.5 h-3.5" /> Initial Password
+              </label>
+              <input 
+                type="password" 
+                required 
+                minLength={6}
+                className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition placeholder:text-text-muted"
+                value={formData.password}
+                onChange={e => setFormData({...formData, password: e.target.value})}
+                placeholder="Min 6 characters"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-border/50" />
+
+        {/* Subscription */}
+        <div>
+          <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-5 flex items-center gap-2">
+            <CreditCard className="w-4 h-4 text-accent" /> Subscription
+          </h3>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <label className="text-text-muted text-xs font-semibold uppercase tracking-wider">Plan</label>
               <select 
-                className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 transition"
                 value={formData.plan}
                 onChange={e => setFormData({...formData, plan: e.target.value})}
               >
@@ -103,31 +164,42 @@ export default function NewUserPage() {
             </div>
             
             <div className="space-y-2">
-              <label className="text-text-secondary text-sm font-bold">Number of Days</label>
+              <label className="text-text-muted text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                <CalendarDays className="w-3.5 h-3.5" /> Duration (Days)
+              </label>
               <input 
                 type="number" 
                 required 
                 min={0}
-                className="w-full bg-background border border-border rounded-button px-4 py-3 text-white focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition placeholder:text-text-muted"
                 value={formData.days}
                 onChange={e => setFormData({...formData, days: e.target.value})}
                 placeholder="e.g. 30"
               />
-              <p className="text-xs text-text-muted mt-1">Calculates end date dynamically from today.</p>
+              <p className="text-[11px] text-text-muted">End date is calculated from today.</p>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-end gap-4 pt-4 border-t border-border/50">
-          <Link href="/admin/users" className="px-6 py-3 text-text-secondary hover:text-white transition">
+        {/* Actions */}
+        <div className="flex justify-end gap-3 pt-4 border-t border-border/50">
+          <Link
+            href="/admin/users"
+            className="px-6 py-3 rounded-xl text-sm text-text-secondary hover:text-white hover:bg-white/5 transition"
+          >
             Cancel
           </Link>
           <button 
             type="submit" 
-            disabled={loading}
-            className="btn-primary disabled:opacity-50"
+            disabled={loading || success}
+            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed !py-3 !px-8 !rounded-xl"
           >
-            {loading ? "Creating..." : "Create Member"}
+            {loading ? (
+              <span className="flex items-center gap-2">
+                <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                Creating...
+              </span>
+            ) : success ? "Created ✓" : "Create Member"}
           </button>
         </div>
       </form>

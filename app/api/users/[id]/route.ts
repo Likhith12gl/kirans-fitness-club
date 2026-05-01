@@ -34,11 +34,12 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     const body = await request.json();
 
     // Isolate purely mutable administrative constraints
-    const updates = {
+    const updates: Record<string, any> = {
       plan: body.plan,
       startDate: body.startDate,
       endDate: body.endDate,
     };
+    if (body.phone !== undefined) updates.phone = body.phone;
 
     const user = await User.findByIdAndUpdate(params.id, updates, { new: true }).select("-password");
     if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
