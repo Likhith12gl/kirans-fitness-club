@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { LayoutDashboard, Users, AlertTriangle, FileText, ArrowLeft } from "lucide-react";
+import { LayoutDashboard, Users, AlertTriangle, FileText, ArrowLeft, ImageIcon } from "lucide-react";
 
 const sidebarLinks = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/users", label: "Members", icon: Users },
   { href: "/admin/expiring", label: "Alerts", icon: AlertTriangle },
   { href: "/admin/posts", label: "Content", icon: FileText },
+  { href: "/admin/gallery", label: "Gallery", icon: ImageIcon },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
