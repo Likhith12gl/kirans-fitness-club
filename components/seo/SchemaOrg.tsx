@@ -1,5 +1,5 @@
 export default function SchemaOrg() {
-  const SITE_URL = "https://kiransfitnessclub.com";
+  const SITE_URL = "https://kiransfitnessclub.in";
 
   const localBusinessData = {
     "@context": "https://schema.org",

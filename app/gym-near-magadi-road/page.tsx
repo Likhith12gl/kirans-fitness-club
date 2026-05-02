@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Gym Near Magadi Road, Bangalore — Kiran's Fitness Club",
   description:
     "Join the most equipped gym near Magadi Road, Bangalore. Expert personal trainers, premium strength equipment, and flexible hours at Kiran's Fitness Club, Anjananagar.",
-  alternates: { canonical: "https://kiransfitnessclub.com/gym-near-magadi-road" },
+  alternates: { canonical: "https://kiransfitnessclub.in/gym-near-magadi-road" },
   openGraph: {
     title: "Gym Near Magadi Road | Kiran's Fitness Club, Bangalore",
     description: "Premium gym near Magadi Road, Bangalore. Expert trainers, modern equipment, flexible hours at Anjananagar.",
-    url: "https://kiransfitnessclub.com/gym-near-magadi-road",
+    url: "https://kiransfitnessclub.in/gym-near-magadi-road",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Gym Near Magadi Road | Kiran's Fitness Club", description: "Best gym near Magadi Road — expert trainers and premium equipment in Anjananagar, Bangalore." },

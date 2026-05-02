@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Gym Gallery — Photos of Our Facility & Equipment",
   description:
     "Take a virtual tour of Kiran's Fitness Club in Anjananagar, Bangalore. See our premium equipment, spacious training floor, and community in action.",
-  alternates: { canonical: "https://kiransfitnessclub.com/gallery" },
+  alternates: { canonical: "https://kiransfitnessclub.in/gallery" },
   openGraph: {
     title: "Gym Gallery | Kiran's Fitness Club, Anjananagar",
     description: "See our premium gym equipment, training floor, and fitness community in Anjananagar, Bangalore.",
-    url: "https://kiransfitnessclub.com/gallery",
+    url: "https://kiransfitnessclub.in/gallery",
     type: "website",
   },
   twitter: {

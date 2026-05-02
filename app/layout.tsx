@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const SITE_URL = "https://kiransfitnessclub.com";
+const SITE_URL = "https://kiransfitnessclub.in";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -82,6 +83,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3M55NW7J1F"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3M55NW7J1F');
+          `}
+        </Script>
+      </head>
       <body className="antialiased">
         <Providers>
           <Navbar />

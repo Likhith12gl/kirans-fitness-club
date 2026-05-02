@@ -7,7 +7,7 @@ import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import LocationCTA from "@/components/home/LocationCTA";
 
-const SITE_URL = "https://kiransfitnessclub.com";
+const SITE_URL = "https://kiransfitnessclub.in";
 
 export const metadata: Metadata = {
   // Use the root layout default — no template applied for homepage

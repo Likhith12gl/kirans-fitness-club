@@ -35,7 +35,7 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Host
-Host: https://kiransfitnessclub.com
+Host: https://kiransfitnessclub.in
 
 # Sitemaps
-Sitemap: https://kiransfitnessclub.com/sitemap.xml
+Sitemap: https://kiransfitnessclub.in/sitemap.xml

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Fitness Blog — Workout Tips & Nutrition Advice",
   description:
     "Expert fitness tips, workout guides, and nutrition advice from the certified trainers at Kiran's Fitness Club, Anjananagar, Bangalore.",
-  alternates: { canonical: "https://kiransfitnessclub.com/blog" },
+  alternates: { canonical: "https://kiransfitnessclub.in/blog" },
   openGraph: {
     title: "Fitness Blog | Kiran's Fitness Club",
     description: "Expert fitness tips, workout guides, and nutrition advice from certified trainers at Kiran's Fitness Club, Bangalore.",
-    url: "https://kiransfitnessclub.com/blog",
+    url: "https://kiransfitnessclub.in/blog",
     type: "website",
   },
   twitter: {

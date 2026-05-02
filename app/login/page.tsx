@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Member Login — Access Your Fitness Dashboard",
   description:
     "Login to your Kiran's Fitness Club member account to view your subscription status, billing cycle, and gym access details.",
-  alternates: { canonical: "https://kiransfitnessclub.com/login" },
+  alternates: { canonical: "https://kiransfitnessclub.in/login" },
   robots: { index: false, follow: false }, // login page should not be indexed
 };
 

@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Gym Membership Plans & Pricing — Monthly, Quarterly, Annual",
   description:
     "Affordable gym membership plans at Kiran's Fitness Club, Anjananagar. Monthly (₹1,500), Quarterly (₹4,000), and Annual (₹12,000) plans with personal training and group classes in Bangalore.",
-  alternates: { canonical: "https://kiransfitnessclub.com/services" },
+  alternates: { canonical: "https://kiransfitnessclub.in/services" },
   openGraph: {
     title: "Gym Membership Plans & Pricing | Kiran's Fitness Club",
     description: "Affordable gym plans in Anjananagar, Bangalore — Monthly ₹1,500, Quarterly ₹4,000, Annual ₹12,000. Personal training and group classes included.",
-    url: "https://kiransfitnessclub.com/services",
+    url: "https://kiransfitnessclub.in/services",
     type: "website",
   },
   twitter: {
