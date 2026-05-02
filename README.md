@@ -63,8 +63,6 @@ npm run dev
 ```
 
 Open your browser to [http://localhost:3000](http://localhost:3000). To test the backend, navigate to `/login` and sign in utilizing:
-- **Email:** `admin@kiransfitness.com`
-- **Password:** `Admin@123`
 
 ---
 *Developed meticulously for production environments.*
